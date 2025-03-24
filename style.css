@@ -10,14 +10,14 @@
 /* ------------------------------ */
 /*       GLOBAL STYLING           */
 /* ------------------------------ */
-body {
+html, body {
   font-family: Arial, sans-serif;
-  color: #333;
-  background: #fff;
   line-height: 1.6;
+  background: #ffffff;
+  color: #333333;
+  scroll-behavior: smooth; /* Enables smooth scrolling to anchors */
 }
 
-/* Utility container to keep content centered and set a max width */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -25,9 +25,8 @@ body {
   padding: 20px;
 }
 
-/* Section spacing */
 .section {
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .bg-light {
@@ -38,26 +37,27 @@ body {
 /*      HEADER & NAVBAR           */
 /* ------------------------------ */
 .header {
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-.header .container {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
 }
-
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
 }
-
 .navbar .nav-links {
   list-style: none;
+  display: flex;
 }
 .navbar .nav-links li {
-  display: inline-block;
   margin-left: 20px;
 }
 .navbar .nav-links a {
@@ -67,29 +67,91 @@ body {
   transition: color 0.3s ease;
 }
 .navbar .nav-links a:hover {
-  color: #0073e6; /* highlight color on hover */
+  color: #0073e6;
 }
 
 /* ------------------------------ */
 /*            HERO                */
 /* ------------------------------ */
 .hero {
-  background: #0073e6;
-  color: #fff;
-  padding: 60px 0;
-  text-align: center;
+  position: relative;
+  height: 80vh;
+  background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
+.overlay {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .hero-content {
-  max-width: 700px;
-  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
 }
 .hero-content h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+.hero-button:hover {
+  background: #005bb5;
+}
+
+/* ------------------------------ */
+/*        FADE-IN ANIMATION       */
+/* ------------------------------ */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in-up on elements with the class */
+.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* starts invisible until animation plays */
+}
+
+/* Delay each fade in if needed (optional) */
+/*
+.fade-in-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.fade-in-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
+*/
 
 /* ------------------------------ */
 /*       SECTION CONTENT          */
@@ -97,6 +159,7 @@ body {
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 .section p {
   margin-bottom: 20px;
@@ -105,6 +168,7 @@ body {
 .highlight-list {
   list-style: disc inside;
   margin-bottom: 20px;
+  padding-left: 1rem; /* a bit of left spacing for clarity */
 }
 
 /* ------------------------------ */
@@ -112,7 +176,7 @@ body {
 /* ------------------------------ */
 .contact-links {
   list-style: none;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .contact-links li {
   margin-bottom: 10px;
@@ -137,30 +201,40 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 .footer p {
-  color: #666;
+  color: #666666;
 }
 
 /* ------------------------------ */
 /*         MEDIA QUERIES          */
 /* ------------------------------ */
 @media (max-width: 768px) {
-  .header .container {
+  .header-container {
     flex-direction: column;
     height: auto;
-    padding: 20px 0;
+    padding: 10px 0;
   }
-
+  .navbar .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
   .navbar .nav-links li {
-    display: block;
     margin: 10px 0;
-    text-align: center;
   }
 
+  .hero {
+    height: 60vh;
+  }
   .hero-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-button {
+    padding: 10px 20px;
   }
 
   .section h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
