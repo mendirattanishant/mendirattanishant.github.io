@@ -17,7 +17,7 @@ body {
   line-height: 1.6;
 }
 
-/* Utility class to keep content centered and set a max width */
+/* Utility container to keep content centered and set a max width */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -102,7 +102,7 @@ body {
   margin-bottom: 20px;
   line-height: 1.7;
 }
-.highlight-list, .work-list {
+.highlight-list {
   list-style: disc inside;
   margin-bottom: 20px;
 }
