@@ -1,25 +1,20 @@
 // script.js
 
-// We'll observe when sections with .fade-in are scrolled into view, then add the .show class
-// for a nice fade-in effect.
-
 document.addEventListener("DOMContentLoaded", () => {
-  const faders = document.querySelectorAll(".fade-in");
+  const fadeInElements = document.querySelectorAll(".fade-in-up");
 
-  const appearOptions = {
-    threshold: 0.1, // Trigger when 10% of the element is visible
-    rootMargin: "0px 0px -50px 0px" // Adjust if you want earlier/later triggers
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
   };
 
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("show");
-      observer.unobserve(entry.target);
+      obs.unobserve(entry.target);
     });
-  }, appearOptions);
+  }, observerOptions);
 
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
+  fadeInElements.forEach(el => observer.observe(el));
 });
