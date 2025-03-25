@@ -1,23 +1,24 @@
-/* ---------------------------- */
-/*       GLOBAL RESET           */
-/* ---------------------------- */
+/* ------------------------------ */
+/*         GLOBAL RESET           */
+/* ------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------------------------- */
-/*       GLOBAL STYLING         */
-/* ---------------------------- */
+/* ------------------------------ */
+/*       GLOBAL STYLING           */
+/* ------------------------------ */
 html, body {
   font-family: Arial, sans-serif;
   color: #333;
-  line-height: 1.6;
   background: #fff;
-  scroll-behavior: smooth;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Enables smooth scrolling to anchors */
 }
 
+/* Utility container for spacing and width constraints */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -25,6 +26,7 @@ html, body {
   padding: 20px;
 }
 
+/* Section spacing */
 .section {
   padding: 60px 0;
 }
@@ -33,46 +35,52 @@ html, body {
   background: #f9f9f9;
 }
 
-/* ---------------------------- */
-/*       HEADER & NAVBAR        */
-/* ---------------------------- */
+/* ------------------------------ */
+/*      HEADER & NAVBAR           */
+/* ------------------------------ */
 .header {
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 999; /* ensures the header stays on top */
 }
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
 }
+
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
 }
+
 .navbar .nav-links {
   list-style: none;
   display: flex;
 }
+
 .navbar .nav-links li {
   margin-left: 20px;
 }
+
 .navbar .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
 }
+
 .navbar .nav-links a:hover {
-  color: #0073e6;
+  color: #0073e6; /* highlight color on hover */
 }
 
-/* ---------------------------- */
-/*         HERO SECTION         */
-/* ---------------------------- */
+/* ------------------------------ */
+/*            HERO                */
+/* ------------------------------ */
 .hero {
   position: relative;
   height: 80vh;
@@ -82,25 +90,30 @@ html, body {
   justify-content: center;
   overflow: hidden;
 }
+
 .overlay {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   background: rgba(0, 0, 0, 0.4);
 }
+
 .hero-content {
   position: relative;
   text-align: center;
   color: #fff;
   max-width: 600px;
 }
+
 .hero-content h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
+
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+
 .hero-button {
   display: inline-block;
   padding: 12px 25px;
@@ -111,50 +124,77 @@ html, body {
   font-weight: bold;
   transition: background 0.3s ease;
 }
+
 .hero-button:hover {
   background: #005bb5;
 }
 
-/* ---------------------------- */
-/*    SECTIONS & CONTENT        */
-/* ---------------------------- */
+/* ------------------------------ */
+/*       SECTION CONTENT          */
+/* ------------------------------ */
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   text-align: center;
 }
+
 .section p {
   margin-bottom: 20px;
   line-height: 1.7;
 }
+
+/* Highlight list in the "Highlights" section */
 .highlight-list {
   list-style: disc inside;
   margin-bottom: 20px;
   padding-left: 1rem;
 }
 
-/* ---------------------------- */
-/*     CONTACT LINKS            */
-/* ---------------------------- */
+/* Media links (in Media & Blog Posts section) */
+.links {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.links li {
+  margin: 10px 0;
+}
+
+.links a {
+  color: #0073e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #005bb5;
+}
+
+/* Contact links in the Contact section */
 .contact-links {
   list-style: none;
   margin: 20px 0;
+  padding-left: 0;
 }
+
 .contact-links li {
   margin-bottom: 10px;
 }
+
 .contact-links a {
   color: #0073e6;
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .contact-links a:hover {
   color: #005bb5;
 }
 
-/* ---------------------------- */
-/*           FOOTER             */
-/* ---------------------------- */
+/* ------------------------------ */
+/*            FOOTER              */
+/* ------------------------------ */
 .footer {
   background: #f5f5f5;
   text-align: center;
@@ -162,61 +202,60 @@ html, body {
   font-size: 0.9rem;
   border-top: 1px solid #e5e5e5;
 }
+
 .footer p {
   color: #666;
 }
 
-/* ---------------------------- */
-/*      FADE-IN CLASSES         */
-/* ---------------------------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* ------------------------------ */
+/*       FADE-IN-UP ANIMATION     */
+/* ------------------------------ */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .fade-in-up.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-
-/* ---------------------------- */
-/*        MEDIA QUERIES         */
-/* ---------------------------- */
+/* ------------------------------ */
+/*         MEDIA QUERIES          */
+/* ------------------------------ */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
     height: auto;
     padding: 10px 0;
   }
+
   .navbar .nav-links {
     flex-direction: column;
     margin-top: 10px;
   }
+
   .navbar .nav-links li {
     margin: 10px 0;
   }
+
   .hero {
     height: 60vh;
   }
+
   .hero-content h2 {
     font-size: 1.8rem;
   }
+
   .hero-content p {
     font-size: 1rem;
   }
+
   .hero-button {
     padding: 10px 20px;
   }
+
   .section h2 {
     font-size: 1.4rem;
   }
