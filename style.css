@@ -15,10 +15,10 @@ html, body {
   color: #333;
   background: #fff;
   line-height: 1.6;
-  scroll-behavior: smooth; /* Enables smooth scrolling to anchors */
+  scroll-behavior: smooth;
 }
 
-/* Utility container for spacing and width constraints */
+/* Container to center content and limit width */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -43,7 +43,7 @@ html, body {
   border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
-  z-index: 999; /* ensures the header stays on top */
+  z-index: 999;
 }
 
 .header-container {
@@ -75,7 +75,7 @@ html, body {
 }
 
 .navbar .nav-links a:hover {
-  color: #0073e6; /* highlight color on hover */
+  color: #0073e6;
 }
 
 /* ------------------------------ */
@@ -143,14 +143,13 @@ html, body {
   line-height: 1.7;
 }
 
-/* Highlight list in the "Highlights" section */
 .highlight-list {
   list-style: disc inside;
   margin-bottom: 20px;
   padding-left: 1rem;
 }
 
-/* Media links (in Media & Blog Posts section) */
+/* Media links styling */
 .links {
   list-style: none;
   margin-bottom: 20px;
@@ -171,7 +170,7 @@ html, body {
   color: #005bb5;
 }
 
-/* Contact links in the Contact section */
+/* Contact links styling */
 .contact-links {
   list-style: none;
   margin: 20px 0;
