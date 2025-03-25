@@ -1,20 +1,20 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  const fadeInElements = document.querySelectorAll(".fade-in-up");
+  const fadeElements = document.querySelectorAll(".fade-in-up");
 
-  const observerOptions = {
+  const options = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
   };
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries, observerInstance) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("show");
-      obs.unobserve(entry.target);
+      observerInstance.unobserve(entry.target);
     });
-  }, observerOptions);
+  }, options);
 
-  fadeInElements.forEach(el => observer.observe(el));
+  fadeElements.forEach(el => observer.observe(el));
 });
